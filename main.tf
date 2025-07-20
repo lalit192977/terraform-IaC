@@ -5,9 +5,9 @@ provider "github" {
 resource "github_repository" "example" {
   name        = "terraform-example-repo"
   description = "My awesome codebase"
-  visibility = "public"
-    auto_init = true
-  
+  visibility  = "public"
+  auto_init   = true
+
 }
 
 
@@ -21,4 +21,9 @@ resource "github_repository_file" "readme" {
   commit_author       = "Lalit Kumar"
   commit_email        = "lalit192977@gmail.com"
   overwrite_on_create = true
+}
+
+# you will the output block in the .tfstate file there you are able to see the repository name 
+output "name" {
+  value = github_repository.example.html_url
 }
