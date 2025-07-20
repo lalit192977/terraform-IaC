@@ -1,0 +1,3 @@
+variable "tokenn" {
+    type =string
+}
